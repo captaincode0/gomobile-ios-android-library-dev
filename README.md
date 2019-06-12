@@ -1,5 +1,10 @@
 # gomobile-ios-android-library-dev
+
 Android and iOS cross library development with Golang
+
+**Author:** Diego De Santiago
+
+**The main purpose for this project is to create cross-compiling libraries for Android and iOS, and generated application will be a map application that contains a search input with autocomplete features, search functionality will be processed using a cross-compiled library in Golang.**
 
 ## How to set up?
 
@@ -25,7 +30,7 @@ sudo tar -C /usr/local -xzf go1.12.4.linux-amd64.tar.gz
 
 ### Dependencies and Golang configuration
 
-> Edit your shell profile file configuration based on your distribution
+Edit your shell profile file configuration based on your distribution
 
 ```bash
 # GO CONFIGURATION
@@ -44,7 +49,7 @@ export GOROOT_BOOTSTRAP=$GOROOT
 export PATH="${PATH}:${GOROOT}/bin:${GOPATH}/bin"
 ```
 
-**Open a new terminal or reload your profile file**
+**Open a new terminal or reload your profile file with `source ~/.profile`**
 
 To check go installation run following commands:
 
@@ -53,10 +58,12 @@ go version
 go env
 ```
 
-> Dependencies: gomobile, go-sqlite3, google-geolocate, ini.v1
+The next step is install project dependencies
 
-Copy and paste those commands on terminal:
-a
+**Dependencies:** gomobile, go-sqlite3, google-geolocate, ini.v1
+
+Copy and paste following commands on terminal:
+
 ```bash
 go get github.com/martinlindhe/google-geolocate
 go get github.com/mattn/go-sqlite3
@@ -78,6 +85,7 @@ git clone git@github.com:captaincode0/gomobile-ios-android-library-dev.git $GOPA
 
 ## Set your google API Key
 
-After Api Key generation for Google Maps, edit ini configuration file *config.ini* and add your own key
+After Api Key generation for Google Maps, edit ini configuration file `config.ini` and add your own key
 
-Check manual to generate a [Google Maps Api Key](https://developers.google.com/maps/documentation/embed/get-api-key)
+
+Check documentation to generate a [Google Maps Api Key](https://developers.google.com/maps/documentation/embed/get-api-key)

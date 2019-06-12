@@ -10,7 +10,7 @@ func (validator *Validator) GetErrorMessage(context string) string {
   }
 
   return fmt.Sprintf(
-    "Validation Error [Type: %] context: %",
+    "Validation Error [Type: %s] context: %s",
     validator.Name,
     context
   )

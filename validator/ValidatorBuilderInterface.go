@@ -1,7 +1,19 @@
 package validator
 
 type ValidatorBuilderInterface interface {
-	// Add one field to validate on internal map with one validator
 	AddFieldToValidate(fieldName string, validator Validator) ValidatorBuilder
 	ValidateAll() bool
+	GetAllMessages() (messages []string)
+}
+
+func (validatorBuilder *ValidatorBuilder) AddFieldToValidate(fieldName string, validator Validator) ValidatorBuilder {
+	if value, keyExists := validatorBuilder.FieldsToValidate[fieldName]; not(keyExists) {
+		validatorBuilder.Validators[fieldName] = validator
+	}
+
+	return validatorBuilder
+}
+
+func (validatorBuilder *ValidatorBuilder) ValidateAll() bool {
+
 }
